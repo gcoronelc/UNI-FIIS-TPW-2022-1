@@ -11,7 +11,7 @@
 
 # DOCENTE
 
-- Docente: ERIC GUSTAVO CORONEL CASTILLO
+- Docente: Ing. ERIC GUSTAVO CORONEL CASTILLO
 - Blog: www.desarrollasoftware.com
 - Canal Youtube: https://n9.cl/gustavocoronel
 - Cursos Virtuales: http://gcoronelc.github.io
