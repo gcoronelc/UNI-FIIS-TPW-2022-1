@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="proyecto.css" />
+    <link href="logo.ico" rel="shortcut icon" />
+    <title>Página Personal</title>
+  </head>
+  <body>
+    <header>
+      <header>
+        <nav>
+          <ul>
+            <li><a href="javascript:fnCalcularSuma()">Calcular Suma</a></li>
+            <li><a href="javascript:fnCalcularVenta()">Calcular venta</a></li>
+            <li><a href="#musicaFavorita">Musica favorita</a></li>
+            <li><a href="#pasatiempos">Pasatiempos</a></li>
+            <li><a href="#proyectos">Proyectos</a></li>
+          </ul>
+        </nav>
+      </header>
+    </header>
+
+    <main class="contenido wrapper">
+      <section id="calcularSuma" style="display: none">
+        <h1>CALCULAR SUMA</h1>
+        <form action="">
+          <div>
+            <label for="num1">Número 1:</label>
+            <input type="text" name="num1" id="num1" />
+          </div>
+          <div>
+            <label for="num2">Número 2:</label>
+            <input type="text" name="num2" id="num2" />
+          </div>
+          <div>
+            <label for="suma">Suma:</label>
+            <input type="text" name="suma" id="suma" disabled="disabled" />
+          </div>
+          <div>
+            <input
+              type="button"
+              name="btnCalcularSuma"
+              id="btnCalcularSuma"
+              value="Procesar"
+              class="boton"
+            />
+          </div>
+        </form>
+      </section>
+      <section id="calcularVenta" style="display: none">
+        <h1>CALCULAR VENTA</h1>
+        <p>
+          Lorem ipsum dolor, sit amet consectetur adipisicing elit. Hic libero
+          voluptate voluptatem, placeat praesentium animi quam molestiae?
+          Voluptatum sint quae nihil! Sunt eaque tenetur id nostrum. Quasi at
+          aspernatur natus.
+        </p>
+      </section>
+      <section id="encontrarMayor" style="display: none">
+        <h1>ENCONTRAR EL MAYOR</h1>
+        <p>
+          Lorem ipsum dolor, sit amet consectetur adipisicing elit. Hic libero
+          voluptate voluptatem, placeat praesentium animi quam molestiae?
+          Voluptatum sint quae nihil! Sunt eaque tenetur id nostrum. Quasi at
+          aspernatur natus.
+        </p>
+      </section>
+      <section id="factorial" style="display: none">
+        <h1>CALCULAR FACTORIAL</h1>
+        <p>
+          Lorem ipsum dolor, sit amet consectetur adipisicing elit. Hic libero
+          voluptate voluptatem, placeat praesentium animi quam molestiae?
+          Voluptatum sint quae nihil! Sunt eaque tenetur id nostrum. Quasi at
+          aspernatur natus.
+        </p>
+      </section>
+      <section id="tablaMultiplicar" style="display: none">
+        <h1>TABLA DE MULTIPLICAR</h1>
+        <p>
+          Lorem ipsum dolor, sit amet consectetur adipisicing elit. Hic libero
+          voluptate voluptatem, placeat praesentium animi quam molestiae?
+          Voluptatum sint quae nihil! Sunt eaque tenetur id nostrum. Quasi at
+          aspernatur natus.
+        </p>
+      </section>
+    </main>
+    <footer>
+      Gustavo Coronel Castillo<br />
+      Correo: gcoronelc@gmail.com
+    </footer>
+    <script>
+      function fnCalcularSuma() {
+        hacerVisible("calcularSuma");
+      }
+
+      function fnCalcularVenta() {
+        hacerVisible("calcularVenta");
+      }
+
+      function hacerVisible(id) {
+        // Oculta todos
+        document.getElementById("calcularSuma").style.display = "none";
+        document.getElementById("calcularVenta").style.display = "none";
+        document.getElementById("encontrarMayor").style.display = "none";
+        document.getElementById("factorial").style.display = "none";
+        document.getElementById("tablaMultiplicar").style.display = "none";
+        // Hacer visible el id
+        document.getElementById(id).style.display = "block";
+      }
+
+      /* Boton calcular suma */
+      document.getElementById("btnCalcularSuma").onclick = function () {
+        // Datos
+        let num1 = document.getElementById("num1").value;
+        let num2 = document.getElementById("num2").value;
+        // Proceso
+        let suma = num1 + num2;
+        // Reporte
+        document.getElementById("suma").value = suma;
+        // Hace visible la sección
+      };
+    </script>
+  </body>
+</html>
