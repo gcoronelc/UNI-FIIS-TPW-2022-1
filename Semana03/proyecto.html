@@ -50,13 +50,36 @@
           </div>
         </form>
       </section>
+
       <section id="calcularVenta" style="display: none">
         <h1>CALCULAR VENTA</h1>
-        <p>
-          Lorem ipsum dolor, sit amet consectetur adipisicing elit. Hic libero
-          voluptate voluptatem, placeat praesentium animi quam molestiae? Voluptatum
-          sint quae nihil! Sunt eaque tenetur id nostrum. Quasi at aspernatur natus.
-        </p>
+        <form action="">
+          <div>
+            <label for="precio">Precio</label>
+            <input type="number" name="precio" id="precio" />
+          </div>
+          <div>
+            <label for="cantidad">Cantidad</label>
+            <input type="number" name="cantidad" id="cantidad" />
+          </div>
+          <div>
+            <label for="importe">Importe</label>
+            <input type="number" name="importe" id="importe" disabled="disabled" />
+          </div>
+          <div>
+            <label for="impuesto">Impuesto</label>
+            <input type="number" name="impuesto" id="impuesto" disabled="disabled" />
+          </div>
+          <div>
+            <label for="total">Total</label>
+            <input type="number" name="total" id="total" disabled="disabled" />
+          </div>
+          <div>
+            <button type="button" name="btnProcesarVenta" id="btnProcesarVenta">
+              Procesar
+            </button>
+          </div>
+        </form>
       </section>
       <section id="encontrarMayor" style="display: none">
         <h1>ENCONTRAR EL MAYOR</h1>
