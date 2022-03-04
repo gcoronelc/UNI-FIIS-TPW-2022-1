@@ -13,9 +13,9 @@
       <header>
         <nav>
           <ul>
-            <li><a href="javascript:fnCalcularSuma()">Calcular Suma</a></li>
+            <li><a href="javascript:fnCalcularSuma()">Calcular suma</a></li>
             <li><a href="javascript:fnCalcularVenta()">Calcular venta</a></li>
-            <li><a href="#musicaFavorita">Musica favorita</a></li>
+            <li><a href="javascript:fnSueldoProfesor()">Sueldo del profesor</a></li>
             <li><a href="#pasatiempos">Pasatiempos</a></li>
             <li><a href="#proyectos">Proyectos</a></li>
           </ul>
@@ -86,14 +86,56 @@
           </div>
         </form>
       </section>
-      <section id="encontrarMayor" style="display: none">
-        <h1>ENCONTRAR EL MAYOR</h1>
-        <p>
-          Lorem ipsum dolor, sit amet consectetur adipisicing elit. Hic libero
-          voluptate voluptatem, placeat praesentium animi quam molestiae? Voluptatum
-          sint quae nihil! Sunt eaque tenetur id nostrum. Quasi at aspernatur natus.
-        </p>
+
+      <section id="sueldoProfesor" style="display: none">
+        <h1>SUELDO DEL PROFESOR</h1>
+        <form action="">
+          <div>
+            <label for="req2Horas">Horas dictadas</label>
+            <input type="number" name="req2Horas" id="req2Horas" />
+          </div>
+          <div>
+            <label for="cantidad">Investiga</label>
+            <select name="req2Investiga" id="req2Investiga">
+              <option value="S">SI investiga</option>
+              <option value="N">NO investiga</option>
+            </select>
+          </div>
+          <div>
+            <label for="req2Ingresos">Ingresos</label>
+            <input
+              type="number"
+              name="req2Ingresos"
+              id="req2Ingresos"
+              disabled="disabled"
+            />
+          </div>
+          <div>
+            <label for="req2Bono">Bonificación</label>
+            <input type="number" name="req2Bono" id="req2Bono" disabled="disabled" />
+          </div>
+          <div>
+            <label for="req2Sueldo">Sueldo</label>
+            <input
+              type="number"
+              name="req2Sueldo"
+              id="req2Sueldo"
+              disabled="disabled"
+            />
+          </div>
+          <div>
+            <button
+              class="boton"
+              type="button"
+              name="req2Procesar"
+              id="req2Procesar"
+            >
+              Procesar
+            </button>
+          </div>
+        </form>
       </section>
+
       <section id="factorial" style="display: none">
         <h1>CALCULAR FACTORIAL</h1>
         <p>

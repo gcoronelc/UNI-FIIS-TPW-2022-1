@@ -6,11 +6,15 @@ function fnCalcularVenta() {
   hacerVisible("calcularVenta");
 }
 
+function fnSueldoProfesor() {
+  hacerVisible("sueldoProfesor");
+}
+
 function hacerVisible(id) {
   // Oculta todos
   document.getElementById("calcularSuma").style.display = "none";
   document.getElementById("calcularVenta").style.display = "none";
-  document.getElementById("encontrarMayor").style.display = "none";
+  document.getElementById("sueldoProfesor").style.display = "none";
   document.getElementById("factorial").style.display = "none";
   document.getElementById("tablaMultiplicar").style.display = "none";
   // Hacer visible el id
