@@ -79,13 +79,25 @@ document.getElementById("req3Procesar").onclick = function () {
   consumo = parseFloat(document.getElementById("req3Consumo").value);
   categoria = document.getElementById("req3Categoria").value;
   // Validación
-
+  if (isNaN(consumo) || categoria == "X") {
+    alert("Error, revise sus datos.");
+    return; //Finaliza el proceso
+  }
   // Proceso
-
-  alert(consumo + "/" + categoria);
-
+  //Paso 1: Calcular el costo del m3
+  costoM3 = 0;
+  costoM3 = categoria == "A" ? 2.25 : costoM3;
+  costoM3 = categoria == "B" ? 3.54 : costoM3;
+  costoM3 = categoria == "C" ? 8.79 : costoM3;
+  costoM3 = categoria == "D" ? 9.87 : costoM3;
+  //Paso 2: Calcular el total
+  total = costoM3 * consumo;
+  //Paso 3: Calcular el importe
+  importe = total / 1.18;
+  //Paso 4: Calclar el impuesto
+  impuesto = total - importe;
   // Reporte
-  //document.getElementById("req2Ingresos").value = "S/." + ingresos.toString();
-  //document.getElementById("req2Bono").value = "S/." + bono.toString();
-  //document.getElementById("req2Sueldo").value = "S/." + sueldo.toString();
+  document.getElementById("req3Importe").value = "S/." + importe.toFixed(2);
+  document.getElementById("req3Impuesto").value = "S/." + impuesto.toFixed(2);
+  document.getElementById("req3Total").value = "S/." + total.toFixed(2);
 };

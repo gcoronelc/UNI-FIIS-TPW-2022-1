@@ -90,6 +90,7 @@
       <section id="sueldoProfesor" style="display: none">
         <h1>SUELDO DEL PROFESOR</h1>
         <form action="">
+          <h3>Datos</h3>
           <div>
             <label for="req2Horas">Horas dictadas</label>
             <input type="number" name="req2Horas" id="req2Horas" />
@@ -101,6 +102,7 @@
               <option value="N">NO investiga</option>
             </select>
           </div>
+          <h3>Reporte</h3>
           <div>
             <label for="req2Ingresos">Ingresos</label>
             <input
@@ -139,6 +141,7 @@
       <section id="consumoAgua" style="display: none">
         <h1>CALCULAR CONSUMO DE AGUA</h1>
         <form action="">
+          <h3>Datos</h3>
           <div>
             <label for="req3Consumo">Consumo (M3)</label>
             <input type="number" name="req3Consumo" id="req3Consumo" />
@@ -153,10 +156,11 @@
               <option value="D">D - Industrial</option>
             </select>
           </div>
+          <h3>Reporte</h3>
           <div>
             <label for="req3Importe">Importe</label>
             <input
-              type="number"
+              type="text"
               name="req3Importe"
               id="req3Importe"
               disabled="disabled"
@@ -165,7 +169,7 @@
           <div>
             <label for="req3Impuesto">Impuesto</label>
             <input
-              type="number"
+              type="text"
               name="req3Impuesto"
               id="req3Impuesto"
               disabled="disabled"
@@ -173,12 +177,7 @@
           </div>
           <div>
             <label for="req3Total">Sueldo</label>
-            <input
-              type="number"
-              name="req3Total"
-              id="req3Total"
-              disabled="disabled"
-            />
+            <input type="text" name="req3Total" id="req3Total" disabled="disabled" />
           </div>
           <div>
             <button
