@@ -78,6 +78,8 @@ document.getElementById("req3Procesar").onclick = function () {
   // Datos
   consumo = parseFloat(document.getElementById("req3Consumo").value);
   categoria = document.getElementById("req3Categoria").value;
+  // Validación
+
   // Proceso
 
   alert(consumo + "/" + categoria);
