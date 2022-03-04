@@ -10,12 +10,16 @@ function fnSueldoProfesor() {
   hacerVisible("sueldoProfesor");
 }
 
+function fnConsumoAgua() {
+  hacerVisible("consumoAgua");
+}
+
 function hacerVisible(id) {
   // Oculta todos
   document.getElementById("calcularSuma").style.display = "none";
   document.getElementById("calcularVenta").style.display = "none";
   document.getElementById("sueldoProfesor").style.display = "none";
-  document.getElementById("factorial").style.display = "none";
+  document.getElementById("consumoAgua").style.display = "none";
   document.getElementById("tablaMultiplicar").style.display = "none";
   // Hacer visible el id
   document.getElementById(id).style.display = "block";
@@ -57,9 +61,29 @@ document.getElementById("req2Procesar").onclick = function () {
   horas = parseInt(document.getElementById("req2Horas").value);
   investiga = document.getElementById("req2Investiga").value;
   // Proceso
+  ingresos = horas * 30;
+  porcBono = investiga == "S" ? 0.3 : 0;
+  bono = ingresos * porcBono;
+  sueldo = ingresos + bono;
+  // Reporte
+  document.getElementById("req2Ingresos").value = "S/." + ingresos.toString();
+  document.getElementById("req2Bono").value = "S/." + bono.toString();
+  document.getElementById("req2Sueldo").value = "S/." + sueldo.toString();
+};
 
-  alert(horas + "/" + investiga);
+/* Botón consumo de agua */
+document.getElementById("req3Procesar").onclick = function () {
+  // Variables
+  let consumo, categoria, costoM3, importe, impuesto, total;
+  // Datos
+  consumo = parseFloat(document.getElementById("req3Consumo").value);
+  categoria = document.getElementById("req3Categoria").value;
+  // Proceso
+
+  alert(consumo + "/" + categoria);
 
   // Reporte
-  //document.getElementById("importe").value = importe;
+  //document.getElementById("req2Ingresos").value = "S/." + ingresos.toString();
+  //document.getElementById("req2Bono").value = "S/." + bono.toString();
+  //document.getElementById("req2Sueldo").value = "S/." + sueldo.toString();
 };

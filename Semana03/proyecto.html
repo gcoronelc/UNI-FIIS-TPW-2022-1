@@ -16,7 +16,7 @@
             <li><a href="javascript:fnCalcularSuma()">Calcular suma</a></li>
             <li><a href="javascript:fnCalcularVenta()">Calcular venta</a></li>
             <li><a href="javascript:fnSueldoProfesor()">Sueldo del profesor</a></li>
-            <li><a href="#pasatiempos">Pasatiempos</a></li>
+            <li><a href="javascript:fnConsumoAgua()">Consumo de agua</a></li>
             <li><a href="#proyectos">Proyectos</a></li>
           </ul>
         </nav>
@@ -95,7 +95,7 @@
             <input type="number" name="req2Horas" id="req2Horas" />
           </div>
           <div>
-            <label for="cantidad">Investiga</label>
+            <label for="req2Investiga">Investiga</label>
             <select name="req2Investiga" id="req2Investiga">
               <option value="S">SI investiga</option>
               <option value="N">NO investiga</option>
@@ -104,7 +104,7 @@
           <div>
             <label for="req2Ingresos">Ingresos</label>
             <input
-              type="number"
+              type="text"
               name="req2Ingresos"
               id="req2Ingresos"
               disabled="disabled"
@@ -112,12 +112,12 @@
           </div>
           <div>
             <label for="req2Bono">Bonificación</label>
-            <input type="number" name="req2Bono" id="req2Bono" disabled="disabled" />
+            <input type="text" name="req2Bono" id="req2Bono" disabled="disabled" />
           </div>
           <div>
             <label for="req2Sueldo">Sueldo</label>
             <input
-              type="number"
+              type="text"
               name="req2Sueldo"
               id="req2Sueldo"
               disabled="disabled"
@@ -136,14 +136,62 @@
         </form>
       </section>
 
-      <section id="factorial" style="display: none">
-        <h1>CALCULAR FACTORIAL</h1>
-        <p>
-          Lorem ipsum dolor, sit amet consectetur adipisicing elit. Hic libero
-          voluptate voluptatem, placeat praesentium animi quam molestiae? Voluptatum
-          sint quae nihil! Sunt eaque tenetur id nostrum. Quasi at aspernatur natus.
-        </p>
+      <section id="consumoAgua" style="display: none">
+        <h1>CALCULAR CONSUMO DE AGUA</h1>
+        <form action="">
+          <div>
+            <label for="req3Consumo">Consumo (M3)</label>
+            <input type="number" name="req3Consumo" id="req3Consumo" />
+          </div>
+          <div>
+            <label for="req3Categoria">Categoría</label>
+            <select name="req3Categoria" id="req3Categoria">
+              <option value="A">A - Social</option>
+              <option value="B">B - Doméstico</option>
+              <option value="C">C - Comercial</option>
+              <option value="D">D - Industrial</option>
+            </select>
+          </div>
+          <div>
+            <label for="req3Importe">Importe</label>
+            <input
+              type="number"
+              name="req3Importe"
+              id="req3Importe"
+              disabled="disabled"
+            />
+          </div>
+          <div>
+            <label for="req3Impuesto">Impuesto</label>
+            <input
+              type="number"
+              name="req3Impuesto"
+              id="req3Impuesto"
+              disabled="disabled"
+            />
+          </div>
+          <div>
+            <label for="req3Total">Sueldo</label>
+            <input
+              type="number"
+              name="req3Total"
+              id="req3Total"
+              disabled="disabled"
+            />
+          </div>
+          <div>
+            <button
+              class="boton"
+              type="button"
+              name="req3Procesar"
+              id="req3Procesar"
+            >
+              Procesar
+            </button>
+          </div>
+        </form>
       </section>
+
       <section id="tablaMultiplicar" style="display: none">
         <h1>TABLA DE MULTIPLICAR</h1>
         <p>
