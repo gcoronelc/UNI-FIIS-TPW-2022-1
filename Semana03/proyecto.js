@@ -48,3 +48,18 @@ document.getElementById("btnProcesarVenta").onclick = function () {
   document.getElementById("impuesto").value = impuesto;
   document.getElementById("total").value = total;
 };
+
+/* Botón sueldo del profesor */
+document.getElementById("req2Procesar").onclick = function () {
+  // Variables
+  let horas, investiga, ingresos, porcBono, bono, sueldo;
+  // Datos
+  horas = parseInt(document.getElementById("req2Horas").value);
+  investiga = document.getElementById("req2Investiga").value;
+  // Proceso
+
+  alert(horas + "/" + investiga);
+
+  // Reporte
+  //document.getElementById("importe").value = importe;
+};
