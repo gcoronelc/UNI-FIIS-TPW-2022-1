@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Ejemplo 4</title>
+    <style>
+      .boton {
+        margin: 10px;
+        color: blue;
+        width: 150px;
+        height: 35px;
+      }
+      section {
+        padding: 10px;
+        margin: 10px;
+        background-color: lightblue;
+      div {
+        margin: 10px;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>FACTORIAL DE UN NÚMERO</h1>
+    <section>
+      <h2>Datos</h2>
+      <form>
+        <div>
+          <label>Número:</label>
+          <input type="number" id="numero" />
+        </div>
+        <div>
+          <button class="boton" type="button" id="btnProcesar">Procesar</button>
+        </div>
+      </form>
+    </section>
+    <section id="secRespuesta" style="display: none">
+      <h2>Respuesta</h2>
+      <div id="divRespuesta"></div>
+    </section>
+    <script>
+      document.getElementById("btnProcesar").onclick = function () {
+        // Variables
+        let numero, factorial;
+        let reporte;
+        // Datos
+        numero = parseInt(document.getElementById("numero").value);
+        // Proceso
+        factorial = fnFactorial(numero);
+        // Reporte
+        reporte = "<p>El factorial de " + numero + " es " + factorial + "</p>";
+        document.getElementById("divRespuesta").innerHTML = reporte;
+        document.getElementById("secRespuesta").style.display = "block";
+      };
+
+      function fnFactorial(numero) {
+        return "<b>Falta implementar</b>.";
+      }
+    </script>
+  </body>
+</html>
