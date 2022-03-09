@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="trabajoestilo.css" />
+    <title>Trabajo Grupal</title>
+</head>
+
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="Javascript:fnDatosGrupo()">Datos del grupo</a></li>
+                <li><a href="javascript:fnRequerimiento1()">Requerimiento 1</a></li>
+                <li><a href="javascript:fnRequerimiento2()">Requerimiento 2</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main class="contenido wrapper">
+        <section id="datosGrupo" style="display:none">
+            <h1>Datos del grupo</h1>
+            <b><p>Grupo conformado por: </p></b>
+            <ul>
+                <li>Carla Antonella Moretti Valdivia</li>
+                <li>Cristhian Eduardo Morán Pujalla</li>
+            </ul>
+
+        </section>
+        <section id="requerimiento1" style="display:none">
+            <h1>Requerimiento 1</h1>
+            <form action="">
+                <div>
+                    <label for="horasDiariasTrabajadas">Horas diarias trabajadas:</label>
+                    <input type="number" name="horasDiariasTrabajadas" id="horasDiariasTrabajadas" />
+                </div>
+                <div>
+                    <label for="díasTrabajados">Días trabajados:</label>
+                    <input type="number" name="díasTrabajados" id="díasTrabajados" />
+                </div>
+                <div>
+                    <label for="pagoHora">Pago por hora (Soles):</label>
+                    <input type="number" name="pagoHora" id="pagoHora" />
+                </div>
+                <div>
+                    <label for="cantidadHijos">Cantidad de hijos:</label>
+                    <input type="number" name="cantidadHijos" id="cantidadHijos" />
+                </div>
+                <div>
+                    <label for="horasTrabajadas">Horas trabajadas:</label>
+                    <input type="number" name=" horasTrabajadas" id="horasTrabajadas" disabled="disabled" />
+                </div>
+                <div>
+                    <label for="pagoHoras">Pago por hora:</label>
+                    <input type="text" name=" pagoHoras" id="pagoHoras" disabled="disabled" />
+                </div>
+                <div>
+                    <label for="sueldo">Sueldo:</label>
+                    <input type="text" name="sueldo" id="sueldo" disabled="disabled" />
+                </div>
+                <div>
+                    <label for="asignación">Asignación:</label>
+                    <input type="text" name="asignación" id="asignación" disabled="disabled" />
+                </div>
+                <div>
+                    <label for="bono">Bono:</label>
+                    <input type="text" name="bono" id="bono" disabled="disabled" />
+                </div>
+                <div>
+                    <label for=" ingresos">Ingresos:</label>
+                    <input type="text" name="ingresos" id="ingresos" disabled="disabled" />
+                </div>
+                <div>
+                    <label for="renta">Renta:</label>
+                    <input type="text" name="renta" id="renta" disabled="disabled" />
+                </div>
+                <div>
+                    <label for="neto">Neto:</label>
+                    <input type="text" name="neto" id="neto" disabled="disabled" />
+                </div>
+                <div>
+                    <input type="button" name="btnrequerimiento1" id="btnRequerimiento1" value="Procesar"
+                        class="boton" />
+                </div>
+            </form>
+
+        </section>
+        <section id="requerimiento2" style="display:none">
+            <h1>Requerimiento 2</h1>
+            <form action="">
+                <div>
+                    <label for="categoriaCurso">Categoría del curso:</label>
+                    <select type="number" name="categoriaCurso" id="categoriaCurso" option value="X">Seleccionar
+                        categoría</option>
+                        <option value=1>Programación</option>
+                        <option value=2>Ofimatica</option>
+                        <option value=3>Administración</option>
+                        <option value=4>Otros</option>
+                    </select>
+                </div>
+                <div>
+                    <label for="descripcionCurso">Descripción del curso:</label>
+                    <input type="text" name="descripcionCurso" id="descripcionCurso" />
+                </div>
+                <div>
+                    <label for="cantidadParticipantes"> Participantes:</label>
+                    <input type="number" name="cantidadParticipantes" id="cantidadParticipantes" />
+
+                </div>
+                <div>
+                    <label for="categoriaCursos">Categoría del curso: </label>
+                    <input type="text" name="categoriaCursos" id="categoriaCursos" disabled="disabled" />
+                </div>
+                <div>
+                    <label for="descripcionCursos"> Descripción del curso: </label>
+                    <input type="text" name=" descripcionCursos" id="descripcionCursos" disabled="disabled" />
+                </div>
+                <div>
+                    <label for="participantes"> Participantes: </label>
+                    <input type="number" name=" participantes" id="participantes" disabled="disabled" />
+                </div>
+                <div>
+                    <label for="precioCurso"> Precio del curso:</label>
+                    <input type="text" name="precioCurso" id="precioCurso" disabled="disabled" />
+                </div>
+                <div>
+                    <label for="importeVenta"> Importe de venta:</label>
+                    <input type="text" name="importeVenta" id="importeVenta" disabled="disabled" />
+                </div>
+                <div>
+                    <label for="impuesto">Impuestos:</label>
+                    <input type="text" name="impuesto" id="impuesto" disabled="disabled" />
+                </div>
+                <div>
+                    <label for=" total">Total:</label>
+                    <input type="text" name="total" id="total" disabled="disabled" />
+                </div>
+                <div>
+                    <label for="comision">Comisión:</label>
+                    <input type="text" name="comision" id="comision" disabled="disabled" />
+                </div>
+                <div>
+                    <input type="button" name="btnrequerimiento2" id="btnRequerimiento2" value="Procesar"
+                        class="boton" />
+                </div>
+            </form>
+        </section>
+    </main>
+
+    <script lang="javascript" src="trabajouno.js"></script>
+
+</body>
+
+</html>
