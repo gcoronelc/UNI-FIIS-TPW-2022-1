@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="bootstrap4/bootstrap.min.css" />
+    <title>Ejemplo 7</title>
+  </head>
+  <body>
+    <div class="container">
+      <h1>TABLA DE MULTIPLICAR</h1>
+      <!--Formulario-->
+      <div class="card">
+        <div class="card-header">
+          <h4 class="card-title">Datos de entrada</h4>
+        </div>
+        <div class="card-body">
+          <form action="">
+            <div class="form-group row">
+              <label for="numero" class="col-sm-2 col-form-label"
+                >Número de tabla</label
+              >
+              <div class="col-sm-10">
+                <input
+                  type="number"
+                  class="form-control"
+                  id="numero"
+                  placeholder="Numero de tabla"
+                />
+              </div>
+            </div>
+            <div class="form-group row">
+              <div class="col-sm-10">
+                <button type="button" class="btn btn-primary" id="btnProcesar">
+                  Procesar
+                </button>
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+      <!--Resultado-->
+      <div class="card" id="divResultado" style="display: none">
+        <div class="card-header">
+          <h4 class="card-title">Datos de entrada</h4>
+        </div>
+        <div class="card-body">
+          <table class="table table-hover">
+            <tbody id="datosTabla"></tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+
+    <script src="jquery-3.6.0.min.js"></script>
+    <script src="bootstrap4/popper.min.js"></script>
+    <script src="bootstrap4/bootstrap.min.js"></script>
+    <script>
+      // Inicializar la página
+      $(function () {
+        $("#btnProcesar").click(fnBtnProcesar);
+      });
+      // Funciones
+      function fnBtnProcesar() {
+        // Variables
+        let numero, j, rpta, html;
+        // Proceso
+        numero = parseInt($("#numero").val());
+        html = "";
+        for (j = 1; j <= 12; j++) {
+          rpta = j * numero;
+          html += "<tr>";
+          html += "<td>" + j + "</td>";
+          html += "<td>X</td>";
+          html += "<td>" + numero + "</td>";
+          html += "<td>=</td>";
+          html += "<td>" + rpta + "</td>";
+          html += "</tr>";
+        }
+        // Reporte
+        $("#datosTabla").html(html);
+        $("#divResultado").show();
+      }
+    </script>
+  </body>
+</html>
