@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Ejemplo 6</title>
+    <style>
+      .boton {
+        margin: 10px;
+        color: blue;
+        width: 150px;
+        height: 35px;
+      }
+      section {
+        padding: 10px;
+        margin: 10px;
+        background-color: beige;
+      }
+      div {
+        margin: 10px;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>MAYOR DE 4 NUMEROS</h1>
+    <section>
+      <h2>Datos</h2>
+      <form>
+        <div>
+          <label>Número 1:</label>
+          <input type="number" id="num1" />
+        </div>
+        <div>
+          <label>Número 2:</label>
+          <input type="number" id="num2" />
+        </div>
+        <div>
+          <label>Número 3:</label>
+          <input type="number" id="num3" />
+        </div>
+        <div>
+          <button class="boton" type="button" id="btnProcesar">Procesar</button>
+        </div>
+      </form>
+    </section>
+    <section id="secRespuesta" style="display: none">
+      <h2>Respuesta</h2>
+      <div id="divRespuesta"></div>
+    </section>
+    <script src="jquery-3.6.0.min.js"></script>
+    <script>
+      // Inicializar la página
+      $(function () {
+        $("#btnProcesar").click(fnBtnProcesar);
+      });
+
+      // Función: fnBtnProcesar
+      function fnBtnProcesar() {
+        // Variables
+        let num1, num2, num3, num4, mayor;
+        let reporte;
+        // Datos
+        num1 = parseInt($("#num1").val());
+        num2 = parseInt($("#num2").val());
+        num3 = parseInt($("#num3").val());
+        // Proceso
+        mayor = num1;
+        if (num2 > mayor) {
+          mayor = num2;
+        }
+        if (num3 > mayor) {
+          mayor = num3;
+        }
+        // Reporte
+        reporte =
+          "<p>El número mayor de: " + num1 + ", " + num2 + " y " + num3 + "</p>";
+        reporte += "<p>Es: " + mayor + "</p>";
+        $("#divRespuesta").html(reporte);
+        $("#secRespuesta").show("slow");
+      }
+    </script>
+  </body>
+</html>
