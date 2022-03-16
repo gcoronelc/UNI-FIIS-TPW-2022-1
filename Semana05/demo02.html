@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=scr, initial-scale=1.0" />
+    <title>Ejemplo de bucles</title>
+  </head>
+  <body>
+    <h1>Ejemplo de bucles</h1>
+    <script src="jquery-3.6.0.min.js"></script>
+    <script>
+      var colores = new Array(5);
+      colores[0] = "Rojo";
+      colores[1] = "Azul";
+      colores[2] = "Naranja";
+      colores[3] = "Verde";
+      colores[4] = "Amarillo";
+      colores[5] = "Marron";
+      colores[100] = "Violeta";
+
+      console.log("Tamaño del arreglo: " + colores.length);
+
+      $.each(colores, function (i, elem) {
+        if (elem != undefined) {
+          console.log(i + ".- " + elem);
+        }
+      });
+    </script>
+  </body>
+</html>
