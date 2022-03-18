@@ -6,13 +6,24 @@ $(function () {
 
 // Programación del menú
 function fnLnkInicio() {
-  alert("Inicio");
+  fnActiverDiv("divInicio");
 }
 
 function fnLnkVenta() {
-  alert("Venta");
+  fnActiverDiv("divVenta");
 }
 
 function fnLnkReporte() {
-  alert("Reporte");
+  fnActiverDiv("divReporte");
+}
+
+// Funciones utiles
+
+function fnActiverDiv(idDiv) {
+  // Ocultar todos
+  $("#divInicio").hide();
+  $("#divVenta").hide();
+  $("#divReporte").hide();
+  // Mostrar el actual
+  $("#" + idDiv).show();
 }
