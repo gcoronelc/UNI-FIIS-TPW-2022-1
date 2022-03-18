@@ -9,10 +9,7 @@
   <body>
     <h1>jQuery each</h1>
     <h2>Lista de amigos</h2>
-    <ul>
-      <li>Amigo 1</li>
-      <li>Amigo 2</li>
-    </ul>
+    <ul id="listaAmigos"></ul>
     <script src="jquery-3.6.0.min.js"></script>
     <script>
       var amigos = [
@@ -29,7 +26,7 @@
       $.each(amigos, mostrarAmigo);
 
       function mostrarAmigo(i, dato) {
-        console.log(i + ".- " + dato);
+        $("#listaAmigos").append("<li>" + dato + "</li>");
       }
     </script>
   </body>
