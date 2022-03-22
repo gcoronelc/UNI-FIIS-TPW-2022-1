@@ -1,5 +1,6 @@
 var arregloCategorias = [];
 var arregloProductos = [];
+var arregloVentas = [];
 
 $(function () {
   // El menú
@@ -37,8 +38,12 @@ $(function () {
   };
   // Carga combo de categorias
   fnLlenarCategorias();
-  // Combo de productos
+  // Carga el combo de productos
   $("#categoria").change(fnLlenarProductos);
+  // Mostrar el precio
+  $("#producto").change(fnMostrarPrecio);
+  // Procesar venta
+  $("#btnProcesar").click(fnBtnProcesar);
 });
 
 // Programación del menú
@@ -77,6 +82,7 @@ function fnLlenarProductos() {
   let cboProductos = $("#producto");
   cboProductos.empty();
   $("#producto").append("<option value='0'>Seleccionar producto</option>");
+  $("#precio").val("0.0");
   let categoria = $("#categoria").val();
   let elemento = "";
   $.each(arregloProductos, function (i, objProd) {
@@ -86,4 +92,71 @@ function fnLlenarProductos() {
       $("#producto").append(elemento);
     }
   });
+}
+
+function fnMostrarPrecio() {
+  const idProd = $(this).val();
+  const precio = fnObtenerPrecio(idProd);
+  const formato = precio.toLocaleString("es-PE", {
+    style: "currency",
+    currency: "PEN",
+  });
+  $("#precio").val(formato);
+}
+
+function fnBtnProcesar() {
+  // Datos
+  const cliente = $("#cliente").val();
+  const categoria = $("#categoria").val();
+  const idProd = $("#producto").val();
+  const cantidad = $("#cantidad").val();
+  // Obtener el precio
+  const precio = fnObtenerPrecio(idProd);
+  // Obtener el nombre del producto
+  const nombProd = fnObtenerNombre(idProd);
+  // Calculos
+  const importe = precio * cantidad;
+  // Crear objeto
+  let objProducto = {
+    id: idProd,
+    categoria: categoria,
+    nombre: nombProd,
+    precio: precio,
+    cantidad: cantidad,
+    importe: importe,
+  };
+  // Grabar venta
+  const index = arregloVentas.length;
+  arregloVentas[index] = objProducto;
+  // Mostrar mensaje
+  alert("Proceso ok.");
+  fnLimpiarFormulario();
+  console.log(arregloVentas);
+}
+
+function fnObtenerPrecio(idProd) {
+  let precio = 0.0;
+  for (let i = 0; i < arregloProductos.length; i++) {
+    if (idProd == arregloProductos[i].id) {
+      precio = arregloProductos[i].precio;
+    }
+  }
+  return precio;
+}
+
+function fnObtenerNombre(idProd) {
+  let nombre = "None";
+  for (let i = 0; i < arregloProductos.length; i++) {
+    if (idProd == arregloProductos[i].id) {
+      nombre = arregloProductos[i].nombre;
+    }
+  }
+  return nombre;
+}
+
+function fnLimpiarFormulario() {
+  $("#cliente").val("");
+  $("#categoria").val("0");
+  $("#cantidad").val("0");
+  fnLlenarProductos();
 }
