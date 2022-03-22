@@ -56,6 +56,7 @@ function fnLnkVenta() {
 }
 
 function fnLnkReporte() {
+  fnMostrarReporte();
   fnActiverDiv("divReporte");
 }
 
@@ -118,6 +119,7 @@ function fnBtnProcesar() {
   const importe = precio * cantidad;
   // Crear objeto
   let objProducto = {
+    cliente: cliente,
     id: idProd,
     categoria: categoria,
     nombre: nombProd,
@@ -159,4 +161,18 @@ function fnLimpiarFormulario() {
   $("#categoria").val("0");
   $("#cantidad").val("0");
   fnLlenarProductos();
+}
+
+function fnMostrarReporte() {
+  let html = "";
+  $.each(arregloVentas, function (i, venta) {
+    html += "<tr>";
+    html += "<td>" + venta.cliente + "</td>";
+    html += "<td>" + venta.nombre + "</td>";
+    html += "<td>" + venta.precio + "</td>";
+    html += "<td>" + venta.cantidad + "</td>";
+    html += "<td>" + venta.precio + "</td>";
+    html += "</tr>";
+  });
+  $("#reporteData").html(html);
 }
