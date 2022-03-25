@@ -1,0 +1,20 @@
+EJERCICIO 1
+------------------------------------------------------------------------------
+Desarrollar un programa para calcular la tabla de multiplicar de un número N.
+N lo ingresa el usuario.
+
+
+EJERCICIO 2
+-------------------------------------------------------------------------------
+Calcular los datos de una venta.
+Entrada de datos:
+- Precio
+- Cantidad
+Reporte
+- Importe
+- Impuesto
+- Total
+
+
+
+

@@ -1,2 +1,0 @@
-Desarrollar un programa para calcular la tabla de multiplicar de un número N.
-N lo ingresa el usuario.
