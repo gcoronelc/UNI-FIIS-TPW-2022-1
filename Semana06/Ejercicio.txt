@@ -15,6 +15,9 @@ Reporte
 - Impuesto
 - Total
 
-
+EJERCICIO 3
+-------------------------------------------------------------------------------
+Hacer un cambio en el EJERCICIO 2, de tal manera que los datos de la 
+venta se realicen en una función.
 
 
