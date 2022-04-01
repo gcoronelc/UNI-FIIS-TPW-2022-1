@@ -1,0 +1,2 @@
+extension=php_sqlsrv_74_nts.dll
+extension=php_sqlsrv_74_ts.dll
