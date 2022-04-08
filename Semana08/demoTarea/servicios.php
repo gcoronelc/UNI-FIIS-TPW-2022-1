@@ -2,7 +2,7 @@
 
 function getConnection()
 {
-	$serverName = "localhost\sqlexpress, 1433";
+	$serverName = "localhost, 1433";
 	$connectionInfo = array("Database" => "EUREKABANK", "UID" => "sa", "PWD" => "sql", "CharacterSet" => "UTF-8", "TrustServerCertificate" => "True");
 	$conn = sqlsrv_connect($serverName, $connectionInfo);
 	return $conn;
@@ -21,6 +21,17 @@ function getClientes($paterno, $materno, $nombre)
 		$tabla[] = $row;
 	}
 	return $tabla;
+}
+
+function getCliente($codigo)
+{
+	$sql = "select chr_cliecodigo, vch_cliepaterno, vch_cliematerno, vch_clienombre ";
+	$sql .= "from cliente where chr_cliecodigo=?";
+	$conn = getConnection();
+	$parametros = [$codigo];
+	$resultado = sqlsrv_query($conn, $sql, $parametros);
+	$row = sqlsrv_fetch_array($resultado, SQLSRV_FETCH_ASSOC);
+	return $row;
 }
 
 
@@ -68,5 +79,17 @@ function validarLogin($usuario, $clave)
 	$row = sqlsrv_fetch_array($resultado, SQLSRV_FETCH_ASSOC);
 	$contador = $row["contador"];
 	$estado = ($contador == 1) ? 1 : -1;
+	return $estado;
+}
+
+function actualizaDatosCliente($codigo, $paterno, $materno, $nombre)
+{
+	$sql = "update cliente set vch_cliepaterno=?,";
+	$sql .= "vch_cliematerno=?, vch_clienombre=? ";
+	$sql .= "where chr_cliecodigo=?";
+	$conn = getConnection();
+	$parametros = [$paterno, $materno, $nombre, $codigo];
+	$stmt = sqlsrv_query($conn, $sql, $parametros);
+	$estado = ($stmt) ? 1 : -1;
 	return $estado;
 }
