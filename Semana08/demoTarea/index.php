@@ -1,6 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
 
+<?php
+$mensaje = "";
+if (isset($_GET["mensaje"])) {
+	$mensaje = $_GET["mensaje"];
+}
+?>
+
 <head>
 	<meta charset="UTF-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -18,33 +25,30 @@
 					<div class="card shadow-2-strong" style="border-radius: 1rem;">
 						<div class="card-body p-5 text-center">
 
-							<h3 class="mb-5">Sign in</h3>
+							<form method="POST" action="procLogin.php">
 
-							<div class="form-outline mb-4">
-								<input type="email" id="typeEmailX-2" class="form-control form-control-lg" />
-								<label class="form-label" for="typeEmailX-2">Email</label>
-							</div>
+								<h3 class="mb-5">Ingreso al Sistema</h3>
 
-							<div class="form-outline mb-4">
-								<input type="password" id="typePasswordX-2" class="form-control form-control-lg" />
-								<label class="form-label" for="typePasswordX-2">Password</label>
-							</div>
+								<div class="form-outline mb-4">
+									<input type="text" id="usuario" name="usuario" class="form-control form-control-lg" />
+									<label class="form-label" for="usuario">Usuario</label>
+								</div>
 
-							<!-- Checkbox -->
-							<div class="form-check d-flex justify-content-start mb-4">
-								<input class="form-check-input" type="checkbox" value="" id="form1Example3" />
-								<label class="form-check-label" for="form1Example3"> Remember password </label>
-							</div>
+								<div class="form-outline mb-4">
+									<input type="password" id="clave" name="clave" class="form-control form-control-lg" />
+									<label class="form-label" for="clave">Clave</label>
+								</div>
 
-							<button class="btn btn-primary btn-lg btn-block" type="submit">Login</button>
 
+								<button class="btn btn-primary btn-lg btn-block" name="btnIngresar"
+									type="submit">Ingresar</button>
+							</form>
+							<?php if (isset($mensaje)) { ?>
 							<hr class="my-4">
-
-							<button class="btn btn-lg btn-block btn-primary" style="background-color: #dd4b39;"
-								type="submit"><i class="fab fa-google me-2"></i> Sign in with google</button>
-							<button class="btn btn-lg btn-block btn-primary mb-2" style="background-color: #3b5998;"
-								type="submit"><i class="fab fa-facebook-f me-2"></i>Sign in with facebook</button>
-
+							<div class="alert alert-danger" role="alert">
+								<?= $mensaje ?>
+							</div>
+							<?php } ?>
 						</div>
 					</div>
 				</div>

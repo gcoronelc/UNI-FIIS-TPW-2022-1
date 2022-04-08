@@ -56,3 +56,17 @@ function registarDeposito($cuenta, $importe, $empleado)
 	// Todo ok
 	return 1;
 }
+
+
+function validarLogin($usuario, $clave)
+{
+	$sql = "select count(1) contador from Empleado ";
+	$sql .= "where vch_emplusuario=? and vch_emplclave=?";
+	$conn = getConnection();
+	$parametros = [$usuario, $clave];
+	$resultado = sqlsrv_query($conn, $sql, $parametros);
+	$row = sqlsrv_fetch_array($resultado, SQLSRV_FETCH_ASSOC);
+	$contador = $row["contador"];
+	$estado = ($contador == 1) ? 1 : -1;
+	return $estado;
+}
