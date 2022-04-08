@@ -38,19 +38,19 @@ $nombre = $row["vch_clienombre"];
 					<tr>
 						<th>NOMBRE</th>
 						<td><?= $nombre ?></td>
-						<td><input type="text" class="form-control" id="nombre" name="nombre" placeholder="<?= $nombre ?>">
+						<td><input type="text" class="form-control" id="nombre" name="nombre" value="<?= $nombre ?>">
 						</td>
 					</tr>
 					<tr>
 						<th>PATERNO</th>
 						<td><?= $paterno ?></td>
-						<td><input type="text" class="form-control" id="paterno" name="paterno" placeholder="<?= $paterno ?>">
+						<td><input type="text" class="form-control" id="paterno" name="paterno" value="<?= $paterno ?>">
 						</td>
 					</tr>
 					<tr>
 						<th>MATERNO</th>
 						<td><?= $materno ?></td>
-						<td><input type="text" class="form-control" id="materno" name="materno" placeholder="<?= $materno ?>">
+						<td><input type="text" class="form-control" id="materno" name="materno" value="<?= $materno ?>">
 						</td>
 					</tr>
 				</tbody>

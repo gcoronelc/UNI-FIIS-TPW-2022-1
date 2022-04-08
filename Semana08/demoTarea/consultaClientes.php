@@ -37,48 +37,52 @@ if (isset($_POST["btnProcesar"])) {
 		<form class="form-inline" method="post" action="consultaClientes.php">
 
 			<label class="sr-only" for="paterno">Paterno</label>
-			<input type="text" class="form-control mb-2 mr-sm-2" id="paterno" name="paterno" placeholder="Apellido paterno" value="<?= $paterno ?>">
+			<input type="text" class="form-control mb-2 mr-sm-2" id="paterno" name="paterno" placeholder="Apellido paterno"
+				value="<?= $paterno ?>">
 
 			<label class="sr-only" for="materno">Materno</label>
-			<input type="text" class="form-control mb-2 mr-sm-2" id="materno" name="materno" placeholder="Apellido materno" value="<?= $materno ?>">
+			<input type="text" class="form-control mb-2 mr-sm-2" id="materno" name="materno" placeholder="Apellido materno"
+				value="<?= $materno ?>">
 
 			<label class="sr-only" for="nombre">Nombre</label>
-			<input type="text" class="form-control mb-2 mr-sm-2" id="nombre" name="nombre" placeholder="Nombre" value="<?= $nombre ?>">
+			<input type="text" class="form-control mb-2 mr-sm-2" id="nombre" name="nombre" placeholder="Nombre"
+				value="<?= $nombre ?>">
 
 			<button type="submit" class="btn btn-primary mb-2" name="btnProcesar">Submit</button>
 
 		</form>
 
 		<?php if (isset($_POST["btnProcesar"])) { ?>
-			<div class="card">
-				<div class="card-header">
-					Resultado de la consulta
-				</div>
-				<div class="card-body">
-					<table class="table">
-						<thead class="thead-light">
-							<tr>
-								<th>CODIGO</th>
-								<th>PATERNO</th>
-								<th>MATERNO</th>
-								<th>NOMBRE</th>
-								<th>ACCION</th>
-							</tr>
-						</thead>
-						<tbody>
-							<?php foreach ($tabla as $row) { ?>
-								<tr>
-									<td><?= $row["chr_cliecodigo"] ?></td>
-									<td><?= $row["vch_cliepaterno"] ?></td>
-									<td><?= $row["vch_cliematerno"] ?></td>
-									<td><?= $row["vch_clienombre"] ?></td>
-									<td><a href="actualizaCliente.php?codigo=<?= $row["chr_cliecodigo"] ?>" class="btn btn-secondary">Actualizar datos</a></td>
-								</tr>
-							<?php } ?>
-						</tbody>
-					</table>
-				</div>
+		<div class="card">
+			<div class="card-header">
+				Resultado de la consulta
 			</div>
+			<div class="card-body">
+				<table class="table">
+					<thead class="thead-light">
+						<tr>
+							<th>CODIGO</th>
+							<th>NOMBRE</th>
+							<th>PATERNO</th>
+							<th>MATERNO</th>
+							<th>ACCION</th>
+						</tr>
+					</thead>
+					<tbody>
+						<?php foreach ($tabla as $row) { ?>
+						<tr>
+							<td><?= $row["chr_cliecodigo"] ?></td>
+							<td><?= $row["vch_clienombre"] ?></td>
+							<td><?= $row["vch_cliepaterno"] ?></td>
+							<td><?= $row["vch_cliematerno"] ?></td>
+							<td><a href="actualizaCliente.php?codigo=<?= $row["chr_cliecodigo"] ?>"
+									class="btn btn-secondary">Actualizar datos</a></td>
+						</tr>
+						<?php } ?>
+					</tbody>
+				</table>
+			</div>
+		</div>
 		<?php } ?>
 	</div>
 
